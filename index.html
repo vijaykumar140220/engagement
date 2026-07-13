@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vijaya Kumar & Sandhiya | Engagement Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="screen cover" id="cover">
+        <div class="cover-pattern pattern-left"></div>
+        <div class="cover-pattern pattern-right"></div>
+        <div class="cover-content">
+          <img class="ganesha" src="ganesha.png" alt="Lord Ganesha" />
+          <h1>The Engagement Of</h1>
+          <p class="cover-names">Vijaya Kumar <span>&amp;</span> Sandhiya</p>
+          <button id="openInvitation" class="open-button" type="button">
+            <span class="envelope">&#9993;</span> Open Invitation
+          </button>
+        </div>
+      </section>
+
+      <section class="screen invitation" id="invitation" aria-hidden="true">
+        <div class="garland garland-left" aria-hidden="true">
+          <span></span><i></i><b></b><em></em>
+        </div>
+        <div class="garland garland-right" aria-hidden="true">
+          <span></span><i></i><b></b><em></em>
+        </div>
+        <div class="ceremony ceremony-left" aria-hidden="true">
+          <i></i><b></b><span></span>
+        </div>
+        <div class="ceremony ceremony-right" aria-hidden="true">
+          <i></i><b></b><span></span>
+        </div>
+
+        <article class="card-content">
+          <img
+            class="small-ganesha-image"
+            src="ganesha.png"
+            alt="Lord Ganesha"
+          />
+          <p class="intro">Please Join Us In The Celebration</p>
+          <p class="intro of">Of Our Engagement</p>
+          <div class="name-medallion">
+            <span class="petal p1"></span><span class="petal p2"></span
+            ><span class="petal p3"></span> <span class="petal p4"></span
+            ><span class="petal p5"></span><span class="petal p6"></span>
+            <div class="names">Vijaya Kumar <b>&amp;</b> Sandhiya</div>
+          </div>
+          <div class="date-rule"><span></span></div>
+          <div class="event-date">
+            <b>August</b><i></i><strong>31</strong><i></i><b>2026</b>
+          </div>
+          <!-- <p class="weekday">Monday, 31st August 2026</p> -->
+          <p class="celebrate">
+            With the blessings of our families,<br />we request your presence on
+            our special day.
+          </p>
+          <div class="down-arrow" aria-hidden="true">⌄</div>
+        </article>
+        <nav class="bottom-bar" aria-label="Invitation navigation">
+          <button class="active nav-home" type="button">
+            &#8962;<small>Home</small>
+          </button>
+          <button class="nav-couple" type="button">
+            &#9823;<small>Couple</small>
+          </button>
+          <button class="nav-date" type="button">▣<small>Date</small></button>
+          <button class="back-button back-to-cover" type="button">
+            &lsaquo; Cover
+          </button>
+        </nav>
+      </section>
+
+      <section class="screen couple-page" id="couplePage" aria-hidden="true">
+        <span class="heart heart-top" aria-hidden="true">♡</span
+        ><span class="heart heart-bottom" aria-hidden="true">♡</span>
+        <article class="couple-content">
+          <h2>Bride &amp; Groom</h2>
+          <section class="person-card">
+            <label class="photo-placeholder" for="groomPhoto">
+              <img id="groomPreview" alt="Vijaya Kumar" hidden />
+              <span class="plus">+</span><small>Add photo</small>
+            </label>
+            <input
+              id="groomPhoto"
+              class="photo-input"
+              type="file"
+              accept="image/*"
+            />
+            <h3>Vijaya Kumar</h3>
+            <p>Add groom family details here</p>
+          </section>
+          <div class="ampersand">&amp;</div>
+          <section class="person-card">
+            <label class="photo-placeholder" for="bridePhoto">
+              <img id="bridePreview" alt="Sandhiya" hidden />
+              <span class="plus">+</span><small>Add photo</small>
+            </label>
+            <input
+              id="bridePhoto"
+              class="photo-input"
+              type="file"
+              accept="image/*"
+            />
+            <h3>Sandhiya</h3>
+            <p>Add bride family details here</p>
+          </section>
+        </article>
+        <nav class="bottom-bar" aria-label="Invitation navigation">
+          <button class="nav-home" type="button">
+            &#8962;<small>Home</small>
+          </button>
+          <button class="active nav-couple" type="button">
+            &#9823;<small>Couple</small>
+          </button>
+          <button class="nav-date" type="button">▣<small>Date</small></button>
+          <button class="back-button back-to-cover" type="button">
+            &lsaquo; Cover
+          </button>
+        </nav>
+      </section>
+
+      <section class="screen venue-page" id="venuePage" aria-hidden="true">
+        <article class="venue-content">
+          <h2>Venue Details</h2>
+          <div class="venue-card">
+            <p class="venue-type">Engagement</p>
+            <h3>Chennai - Trichy Highway, Nathem</h3>
+            <p class="venue-date">&#128197; Monday, 31st August 2026</p>
+            <p class="venue-address">
+              Kanchipuram Hwy, By Pass Junction,<br />Chengalpattu, Tamil Nadu
+              603002
+            </p>
+            <iframe
+              class="venue-map"
+              title="Chennai Trichy Highway Nathem location map"
+              src="https://www.google.com/maps?q=Chennai%20Trichy%20Highway%20Nathem%2C%20Kanchipuram%20Hwy%2C%20By%20Pass%20Junction%2C%20Chengalpattu%2C%20Tamil%20Nadu%20603002&output=embed"
+              loading="lazy"
+            ></iframe>
+            <a
+              class="map-button"
+              href="https://www.google.com/maps/search/?api=1&query=Chennai%20Trichy%20Highway%20Nathem%2C%20Kanchipuram%20Hwy%2C%20By%20Pass%20Junction%2C%20Chengalpattu%2C%20Tamil%20Nadu%20603002"
+              target="_blank"
+              rel="noopener"
+              >&#128205; View Google Maps</a
+            >
+          </div>
+        </article>
+        <nav class="bottom-bar" aria-label="Invitation navigation">
+          <button class="nav-home" type="button">
+            &#8962;<small>Home</small>
+          </button>
+          <button class="nav-couple" type="button">
+            &#9823;<small>Couple</small>
+          </button>
+          <button class="active nav-date" type="button">
+            ▣<small>Date</small>
+          </button>
+          <button class="back-button back-to-cover" type="button">
+            &lsaquo; Cover
+          </button>
+        </nav>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
