@@ -3,7 +3,19 @@ const invitation = document.getElementById('invitation');
 const couplePage = document.getElementById('couplePage');
 const venuePage = document.getElementById('venuePage');
 const confetti = document.getElementById('confetti');
+const backgroundMusic = document.getElementById('backgroundMusic');
+const musicToggle = document.getElementById('musicToggle');
 let confettiTimer;
+
+function updateMusicButton(isPlaying) {
+  musicToggle.classList.toggle('playing', isPlaying);
+  musicToggle.setAttribute('aria-pressed', String(isPlaying));
+  musicToggle.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+}
+
+function playBackgroundMusic() {
+  backgroundMusic.play().then(() => updateMusicButton(true)).catch(() => updateMusicButton(false));
+}
 
 function createConfettiBurst(pieceCount = 20) {
   const colors = ['#ff6b6b', '#ffb000', '#38bdf8', '#8b5cf6', '#34d399', '#fb7185'];
@@ -79,7 +91,16 @@ function showCover() {
 
 document.getElementById('openInvitation').addEventListener('click', () => {
   launchConfetti();
+  playBackgroundMusic();
   showInvitation();
+});
+musicToggle.addEventListener('click', () => {
+  if (backgroundMusic.paused) {
+    playBackgroundMusic();
+  } else {
+    backgroundMusic.pause();
+    updateMusicButton(false);
+  }
 });
 document.querySelectorAll('.nav-home').forEach((button) => button.addEventListener('click', showInvitation));
 document.querySelectorAll('.nav-couple').forEach((button) => button.addEventListener('click', showCouplePage));
