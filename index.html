@@ -75,11 +75,14 @@
             <p class="event-time">6:00 PM – 7:30 PM</p>
             <div class="event-divider" aria-hidden="true"></div>
             <p class="full-date">Monday, 31st August 2026</p>
-            <p class="event-venue">
+            <!-- <p class="event-venue">
               KVM Mahal (A/C)<br />
               Chennai Trichy Highway, By Pass Junction,<br />
               Chengalpattu, Tamil Nadu 603002
-            </p>
+            </p> -->
+            <button id="saveTheDate" class="save-date" type="button">
+              &#128197; Save The Date
+            </button>
           </section>
           <!-- <div class="down-arrow" aria-hidden="true">⌄</div> -->
         </article>
@@ -103,31 +106,17 @@
         <article class="couple-content">
           <h2>Bride &amp; Groom</h2>
           <section class="person-card">
-            <label class="photo-placeholder" for="groomPhoto">
-              <img id="groomPreview" alt="Vijaya Kumar" hidden />
-              <span class="plus">+</span><small>Add photo</small>
-            </label>
-            <input
-              id="groomPhoto"
-              class="photo-input"
-              type="file"
-              accept="image/*"
-            />
+            <div class="photo-placeholder fixed-photo groom-photo">
+              <img src="vijayakumar r.jpeg" alt="Vijaya Kumar" />
+            </div>
             <h3>Vijaya Kumar</h3>
             <p>Son of Mr. &amp; Mrs. Ragunathan and Banukumari</p>
           </section>
           <div class="ampersand">&amp;</div>
           <section class="person-card">
-            <label class="photo-placeholder" for="bridePhoto">
-              <img id="bridePreview" alt="Sandhiya" hidden />
-              <span class="plus">+</span><small>Add photo</small>
-            </label>
-            <input
-              id="bridePhoto"
-              class="photo-input"
-              type="file"
-              accept="image/*"
-            />
+            <div class="photo-placeholder fixed-photo bride-photo">
+              <img src="sandhiya.jpeg" alt="Sandhiya" />
+            </div>
             <h3>Sandhiya</h3>
             <p>Daughter of Mr. &amp; Mrs. Kumaresan and Usha</p>
           </section>
@@ -154,18 +143,18 @@
             <h3>KVM MAHAL (A/C)</h3>
             <p class="venue-date">&#128197; Monday, 31st August 2026</p>
             <p class="venue-address">
-              Kanchipuram Hwy, By Pass Junction,<br />Chengalpattu, Tamil Nadu
-              603002
+              KVM Mahal (A/C), Chennai Trichy Highway,<br />By Pass Junction,
+              Chengalpattu, Tamil Nadu 603002
             </p>
             <iframe
               class="venue-map"
               title="KVM Mahal (A/C) location map"
-              src="https://www.google.com/maps?q=KVM%20Mahal%20A%2FC%2C%20Chennai%20Trichy%20Highway%2C%20Nathem%2C%20Chengalpattu%2C%20Tamil%20Nadu%20603002&output=embed"
+              src="https://www.google.com/maps?q=KVM%20Mahal%20(A%2FC)%2C%20Chennai%20Trichy%20Highway%2C%20By%20Pass%20Junction%2C%20Chengalpattu%2C%20Tamil%20Nadu%20603002&output=embed"
               loading="lazy"
             ></iframe>
             <a
               class="map-button"
-              href="https://www.google.com/maps/search/?api=1&query=KVM%20Mahal%20A%2FC%2C%20Chennai%20Trichy%20Highway%2C%20Nathem%2C%20Chengalpattu%2C%20Tamil%20Nadu%20603002"
+              href="https://www.google.com/maps/search/?api=1&query=KVM%20Mahal%20(A%2FC)%2C%20Chennai%20Trichy%20Highway%2C%20By%20Pass%20Junction%2C%20Chengalpattu%2C%20Tamil%20Nadu%20603002"
               target="_blank"
               rel="noopener"
               >&#128205; View Google Maps</a
@@ -186,6 +175,41 @@
             &lsaquo; Cover
           </button>
         </nav>
+      </section>
+
+      <section
+        class="screen announcement-page"
+        id="announcementPage"
+        aria-hidden="true"
+      >
+        <article class="announcement-content">
+          <h2>We are getting engaged</h2>
+          <p class="announcement-date">On Monday, 31st August 2026</p>
+          <div class="countdown" aria-label="Countdown to the engagement">
+            <div><strong id="countdownDays">0</strong><span>Days</span></div>
+            <div><strong id="countdownHours">0</strong><span>Hours</span></div>
+            <div>
+              <strong id="countdownMinutes">0</strong><span>Minutes</span>
+            </div>
+            <div>
+              <strong id="countdownSeconds">0</strong><span>Seconds</span>
+            </div>
+          </div>
+          <div class="announcement-message">
+            <span class="message-heart" aria-hidden="true">♡</span>
+            <h3>Dear Family &amp; Friends</h3>
+            <p>
+              We are delighted to announce our engagement and invite you to
+              celebrate this special moment with us. Your love and support mean
+              the world to us, and your presence will make our day complete.
+              Join us for an evening of joy, laughter, and cherished memories as
+              we begin our journey together.
+            </p>
+            <p class="signature">
+              With love and excitement,<br />Vijaya Kumar &amp; Sandhiya
+            </p>
+          </div>
+        </article>
       </section>
     </main>
     <script src="script.js"></script>

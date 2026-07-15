@@ -2,6 +2,7 @@ const cover = document.getElementById('cover');
 const invitation = document.getElementById('invitation');
 const couplePage = document.getElementById('couplePage');
 const venuePage = document.getElementById('venuePage');
+const announcementPage = document.getElementById('announcementPage');
 const confetti = document.getElementById('confetti');
 const backgroundMusic = document.getElementById('backgroundMusic');
 const musicToggle = document.getElementById('musicToggle');
@@ -57,9 +58,11 @@ function revealInvitationFlow() {
   invitation.classList.add('show');
   couplePage.classList.add('show');
   venuePage.classList.add('show');
+  announcementPage.classList.add('show');
   invitation.setAttribute('aria-hidden', 'false');
   couplePage.setAttribute('aria-hidden', 'false');
   venuePage.setAttribute('aria-hidden', 'false');
+  announcementPage.setAttribute('aria-hidden', 'false');
 }
 
 function showInvitation() {
@@ -82,9 +85,11 @@ function showCover() {
   invitation.classList.remove('show');
   couplePage.classList.remove('show');
   venuePage.classList.remove('show');
+  announcementPage.classList.remove('show');
   invitation.setAttribute('aria-hidden', 'true');
   couplePage.setAttribute('aria-hidden', 'true');
   venuePage.setAttribute('aria-hidden', 'true');
+  announcementPage.setAttribute('aria-hidden', 'true');
   cover.classList.remove('hidden');
   window.scrollTo(0, 0);
 }
@@ -93,6 +98,35 @@ document.getElementById('openInvitation').addEventListener('click', () => {
   launchConfetti();
   playBackgroundMusic();
   showInvitation();
+});
+
+function updateCountdown() {
+  const eventTime = new Date('2026-08-31T18:00:00+05:30').getTime();
+  const remaining = Math.max(0, eventTime - Date.now());
+  const seconds = Math.floor(remaining / 1000);
+  const values = [
+    Math.floor(seconds / 86400),
+    Math.floor((seconds % 86400) / 3600),
+    Math.floor((seconds % 3600) / 60),
+    seconds % 60,
+  ];
+  ['countdownDays', 'countdownHours', 'countdownMinutes', 'countdownSeconds'].forEach((id, index) => {
+    document.getElementById(id).textContent = String(values[index]).padStart(index ? 2 : 1, '0');
+  });
+}
+
+updateCountdown();
+window.setInterval(updateCountdown, 1000);
+
+document.getElementById('saveTheDate').addEventListener('click', () => {
+  const parameters = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: 'Vijaya Kumar & Sandhiya Engagement',
+    dates: '20260831T123000Z/20260831T140000Z',
+    details: 'Engagement ceremony from 6:00 PM to 7:30 PM.',
+    location: 'KVM Mahal (A/C), Chennai Trichy Highway, By Pass Junction, Chengalpattu, Tamil Nadu 603002',
+  });
+  window.open(`https://calendar.google.com/calendar/render?${parameters}`, '_blank', 'noopener');
 });
 musicToggle.addEventListener('click', () => {
   if (backgroundMusic.paused) {
@@ -108,10 +142,13 @@ document.querySelectorAll('.nav-date').forEach((button) => button.addEventListen
 document.querySelectorAll('.back-to-cover').forEach((button) => button.addEventListener('click', showCover));
 
 [['groomPhoto', 'groomPreview'], ['bridePhoto', 'bridePreview']].forEach(([inputId, previewId]) => {
-  document.getElementById(inputId).addEventListener('change', (event) => {
+  const input = document.getElementById(inputId);
+  const preview = document.getElementById(previewId);
+  if (!input || !preview) return;
+
+  input.addEventListener('change', (event) => {
     const file = event.target.files[0];
     if (!file) return;
-    const preview = document.getElementById(previewId);
     preview.src = URL.createObjectURL(file);
     preview.hidden = false;
   });
