@@ -75,7 +75,7 @@ const pageAnimationObserver = new IntersectionObserver((entries) => {
       entry.target.classList.remove('animate-in');
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
 [couplePage, venuePage, announcementPage].forEach((page) => pageAnimationObserver.observe(page));
 
@@ -116,6 +116,8 @@ document.getElementById('openInvitation').addEventListener('click', () => {
   playBackgroundMusic();
   showInvitation();
 });
+
+document.querySelector('.scroll-down').addEventListener('click', showCouplePage);
 
 function updateCountdown() {
   const eventTime = new Date('2026-08-31T18:00:00+05:30').getTime();
