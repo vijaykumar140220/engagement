@@ -65,6 +65,20 @@ function revealInvitationFlow() {
   announcementPage.setAttribute('aria-hidden', 'false');
 }
 
+const pageAnimationObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('animate-in');
+      void entry.target.offsetWidth;
+      entry.target.classList.add('animate-in');
+    } else {
+      entry.target.classList.remove('animate-in');
+    }
+  });
+}, { threshold: 0.4 });
+
+[couplePage, venuePage, announcementPage].forEach((page) => pageAnimationObserver.observe(page));
+
 function showInvitation() {
   revealInvitationFlow();
   invitation.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -86,6 +100,9 @@ function showCover() {
   couplePage.classList.remove('show');
   venuePage.classList.remove('show');
   announcementPage.classList.remove('show');
+  couplePage.classList.remove('animate-in');
+  venuePage.classList.remove('animate-in');
+  announcementPage.classList.remove('animate-in');
   invitation.setAttribute('aria-hidden', 'true');
   couplePage.setAttribute('aria-hidden', 'true');
   venuePage.setAttribute('aria-hidden', 'true');
